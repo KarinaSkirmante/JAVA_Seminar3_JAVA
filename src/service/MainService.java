@@ -53,6 +53,9 @@ public class MainService {
 			System.out.println("Sekotaji: " +u4.getAllPagesForBusinessUser().get(0).getTitle() + "->" +
 					u4.getAllPagesForBusinessUser().get(0).getAllFollowers());
 			
+			u4.followPrivateUser("karina.skirmante");//SIA Ziedi ventspili piesekos karina.skirmante
+			
+			System.out.println(u3.getSurname() + " sekotāji ir-> " + u3.getAllFollowers());
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
