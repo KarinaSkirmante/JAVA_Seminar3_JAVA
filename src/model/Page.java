@@ -42,6 +42,21 @@ public class Page {
 			description = "No description";
 		}
 	}
+		
+	public Page() {
+		setTitle("Testa");
+		setDescription("Lapa");
+	}
 	
-
+	public Page(String inputTitle, String inputDescription)
+	{
+		setTitle(inputTitle);
+		setDescription(inputDescription);
+	}
+	
+	public String toString() {
+		return title + " " + description + "->" + allPostsInPage;
+				
+	}
+	
 }
