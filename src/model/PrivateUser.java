@@ -74,6 +74,7 @@ public class PrivateUser extends RegisterUser{
 		return name + " " + surname + ", " + super.toString();
 	}
 	
+	//params[0] -  zinas teksts
 	@Override
 	public void createPost(PostType postType, String... params) throws Exception{
 		if(postType != null && params != null) {

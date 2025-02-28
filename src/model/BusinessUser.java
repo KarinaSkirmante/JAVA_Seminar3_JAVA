@@ -43,10 +43,32 @@ public class BusinessUser extends RegisterUser {
 		return businessName + ", " + super.toString();
 	}
 	
+	//params[0] -  zinas teksts
+	//params[1] - lapas nosaukums, kur publicet zinu
+	//params[2] - otras lapas nosaukums, kur publicet zinu (var arī nebūt)
 	@Override
 	public void createPost(PostType postType, String... params) throws Exception {
-		// TODO Auto-generated method stub
-		
+		if(postType != null && params != null) {
+			if(params.length >= 2) {
+				Post newPost = new Post(params[0]);
+				
+				for(int i = 1; i < params.length; i++) {
+					for(Page tempP: allPagesForBusinessUser) {
+						if(params[i].equals(tempP.getTitle())) {
+							tempP.getAllPostsInPage().add(newPost);
+						}
+					}
+				}
+			}
+			else
+			{
+				throw new Exception("Message text and page title are necessary");
+			}
+		}
+		else
+		{
+			throw new NullPointerException("Params should be with real reference");
+		}
 	}
 
 }
