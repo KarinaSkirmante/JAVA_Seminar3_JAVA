@@ -46,6 +46,13 @@ public class MainService {
 			{
 				System.out.println(tempP);
 			}
+			
+			
+			u3.followPage("Ziedi Ventspili");
+			//get(0) man iedos Ziedi ventspilī lapu
+			System.out.println("Sekotaji: " +u4.getAllPagesForBusinessUser().get(0).getTitle() + "->" +
+					u4.getAllPagesForBusinessUser().get(0).getAllFollowers());
+			
 		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -57,4 +64,11 @@ public class MainService {
 
 	}
 
+	public static ArrayList<GuestUser> getAllUsers() {
+		return allUsers;
+	}
+
+	
+	
+	
 }

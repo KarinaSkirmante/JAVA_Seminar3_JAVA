@@ -3,6 +3,8 @@ package model;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import service.MainService;
+
 public abstract class RegisterUser extends GuestUser implements IPostCreate{ //netiks veidoti objekti no šīs klases, bet šī klase tiks izmantota ka super klase
 	//mainīgie, getters, setters, abi konstruktori, toString + citas funkcijas
 	private String username;
@@ -61,4 +63,34 @@ public abstract class RegisterUser extends GuestUser implements IPostCreate{ //n
 	public String toString() {
 		return super.toString() + ": " + username + " " + password;
 	}
+	
+	//TODO izveidot sekojošas funkcijas
+	//followPage
+	public void followPage(String inputTitle) throws NullPointerException {
+		if(inputTitle != null) {
+			for(GuestUser tempU : MainService.getAllUsers())
+			{
+				if(tempU instanceof BusinessUser) {
+					BusinessUser tempBU = (BusinessUser)tempU;
+					for(Page tempP: tempBU.getAllPagesForBusinessUser()) {
+						if(tempP.getTitle().equals(inputTitle))
+						{
+							tempP.getAllFollowers().add(this);
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			throw new NullPointerException("Title should be with real reference");
+		}
+		
+	}
+	//followPrivateUser
+	//login
+	
+	
+	
+	
 }
