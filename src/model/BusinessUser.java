@@ -71,4 +71,16 @@ public class BusinessUser extends RegisterUser {
 		}
 	}
 
+	public void createPage(String inputTitle, String inputDescription) throws NullPointerException {
+		if(inputTitle != null && inputDescription != null) {
+			
+			Page newPage = new Page(inputTitle, inputDescription);
+			allPagesForBusinessUser.add(newPage);
+			
+		}
+		else
+		{
+			throw new NullPointerException("Params should be with real reference");
+		}
+	}
 }
