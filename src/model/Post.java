@@ -19,7 +19,7 @@ public class Post {
 	}
 	
 	public void setMsg(String inputMsg) {
-		if(inputMsg != null && inputMsg.matches("[A-Za-b .0-9!@#$%^&*()?]{3,100}")) {
+		if(inputMsg != null && inputMsg.matches("[A-Za-z0-9.! %-]{3,100}")) {
 			msg = inputMsg;
 		}
 		else

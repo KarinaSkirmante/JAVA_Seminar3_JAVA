@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 import model.BusinessUser;
 import model.GuestUser;
+import model.Page;
+import model.PostType;
 import model.PrivateUser;
 
 
@@ -24,6 +26,34 @@ public class MainService {
 		for(GuestUser tempU: allUsers) {
 			System.out.println(tempU.getClass().getName() + "->" + tempU);
 		}
+		
+		try {
+			u3.createPost(PostType.publicPost, "Man patik JAVA!");
+			u3.createPost(PostType.privatePost, "Man gribas majas!");
+			
+			System.out.println(u3.getSurname() + " privatas ziņas: " + u3.getPrivatePosts());
+			System.out.println(u3.getSurname() + " publiskas ziņas: " + u3.getPublicPosts());
+		
+			u4.createPage("Ziedi Ventspili", "Mana lapa par ziediem Ventspili");
+			u4.createPage("Ziedi Daugavpili", "Mana lapa par ziediem Daugavpili");
+			
+			u4.createPost(PostType.publicPost,
+					"Ventspils svetki - 20% atlaide visiem ziediem", "Ziedi Ventspili");
+			u4.createPost(PostType.publicPost,"Priecigas Lieldienas",
+					"Ziedi Daugavpili", "Ziedi Ventspili");
+			
+			for(Page tempP : u4.getAllPagesForBusinessUser())
+			{
+				System.out.println(tempP);
+			}
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 
 	}
 

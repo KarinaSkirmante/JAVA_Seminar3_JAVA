@@ -55,7 +55,7 @@ public class Page {
 	}
 	
 	public String toString() {
-		return title + " " + description + "->" + allPostsInPage;
+		return title + ": " + description + "->" + allPostsInPage;
 				
 	}
 	
