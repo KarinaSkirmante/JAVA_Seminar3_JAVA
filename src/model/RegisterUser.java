@@ -18,7 +18,7 @@ public abstract class RegisterUser extends GuestUser implements IPostCreate{ //n
 	}
 	
 	public void setUsername(String inputUsername) {
-		if(inputUsername != null && inputUsername.matches("[A-Za-z0-9._$]{5,15}")) {
+		if(inputUsername != null && inputUsername.matches("[A-Za-z0-9._$]{5,25}")) {
 			username = inputUsername;
 		}
 		else

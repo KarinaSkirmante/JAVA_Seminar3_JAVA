@@ -66,7 +66,7 @@ public class PrivateUser extends RegisterUser{
 	{
 		super(inputUsername, inputPassword);
 		setName(inputName);
-		setUsername(inputUsername);
+		setSurname(inputSurname);
 	}
 
 	
