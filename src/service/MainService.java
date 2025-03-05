@@ -28,12 +28,20 @@ public class MainService {
 		}
 		
 		try {
-			u3.createPost(PostType.publicPost, "Man patik JAVA!");
-			u3.createPost(PostType.privatePost, "Man gribas majas!");
 			
-			System.out.println(u3.getSurname() + " privatas ziņas: " + u3.getPrivatePosts());
-			System.out.println(u3.getSurname() + " publiskas ziņas: " + u3.getPublicPosts());
+			
+			if(u3.login("karina.skirmante", "1234qwer"))
+			{
+			
+				u3.createPost(PostType.publicPost, "Man patik JAVA!");
+				u3.createPost(PostType.privatePost, "Man gribas majas!");
+			
+				System.out.println(u3.getSurname() + " privatas ziņas: " + u3.getPrivatePosts());
+				System.out.println(u3.getSurname() + " publiskas ziņas: " + u3.getPublicPosts());
 		
+			
+			}
+			//TODO uztaisīt mājās arī login pārbaudi u4 jeb Business lietotajam
 			u4.createPage("Ziedi Ventspili", "Mana lapa par ziediem Ventspili");
 			u4.createPage("Ziedi Daugavpili", "Mana lapa par ziediem Daugavpili");
 			
