@@ -61,7 +61,7 @@ public abstract class RegisterUser extends GuestUser implements IPostCreate{ //n
 	}
 	
 	public String toString() {
-		return super.toString() + ": " + username + " " + password;
+		return super.toString() + ": " + username + " ";// + password;
 	}
 	
 	//TODO izveidot sekojošas funkcijas

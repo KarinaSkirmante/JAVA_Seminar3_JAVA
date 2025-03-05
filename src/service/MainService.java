@@ -65,14 +65,20 @@ public class MainService {
 			
 			System.out.println(u3.getSurname() + " sekotāji ir-> " + u3.getAllFollowers());
 		
+			
+			System.out.println("Meklēju (karina) ->" +u4.findUser("karina"));
+			System.out.println("Meklēju (SIA) ->" +u1.findUser("SIA"));
+			System.out.println("Meklēju (a) ->" +u3.findUser("a"));
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		
+		//TODO uztaisīt pārejās filtracijas funkcijas GuestUser klasē
+		//TODO izveidot like iezīmes uzstādīšanu
 		
-
 	}
 
 	public static ArrayList<GuestUser> getAllUsers() {
